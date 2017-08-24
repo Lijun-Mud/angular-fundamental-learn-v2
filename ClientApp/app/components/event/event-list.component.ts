@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { EventService}  from './shared/event.service';
+//import { EventService}  from './shared/event.service';
 import { ToastrService } from 'ngx-toastr';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'events-list',
@@ -8,12 +9,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 
 export class EventsListComponent implements OnInit {
-    events:any[];
-    constructor(private eventService: EventService,private toastr:ToastrService) {
+    events:any;
+    constructor(private toastr:ToastrService,private rounter:ActivatedRoute) {
     }
 
     ngOnInit(): void {
-        this.events = this.eventService.getEvents();
+        //this.eventService.getEvents().subscribe(events => this.events = events);
+        this.events = this.rounter.snapshot.data['events'];
     }
 
     handleEventClick(event: any) {

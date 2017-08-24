@@ -8,23 +8,19 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
-import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-import { CounterComponent } from './components/counter/counter.component';
 import { EventService } from './components/event/shared/event.service';
 import { Error404Component } from './components/errors/404.component'
 import { appRoutes } from './routes';
-import {EventAppComponent} from './components/event/index';
+import {EventsListComponent,EventThumbnailComponent,CreateEventComponent,EventsListResolver} from './components/event/index';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
-        FetchDataComponent,
-        HomeComponent,
         Error404Component,
-        EventAppComponent
+        EventsListComponent,
+        EventThumbnailComponent,
+        CreateEventComponent,
     ],
     imports: [
         CommonModule,
@@ -34,7 +30,8 @@ import {EventAppComponent} from './components/event/index';
         ToastrModule.forRoot()
     ],
     providers: [
-        EventService
+        EventService,
+        EventsListResolver
     ]
 })
 export class AppModuleShared {

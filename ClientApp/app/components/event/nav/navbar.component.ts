@@ -1,10 +1,10 @@
-﻿import { Component } from '@angular/core';
+﻿//import { Component } from '@angular/core';
 
-@Component({
-    selector: 'nav-bar',
-    templateUrl:'./navbar.component.html'
-})
+//@Component({
+//    selector: 'nav-bar',
+//    templateUrl:'./navbar.component.html'
+//})
 
-export class  NavBarComponent {
+//export class  NavBarComponent {
     
-}
+//}

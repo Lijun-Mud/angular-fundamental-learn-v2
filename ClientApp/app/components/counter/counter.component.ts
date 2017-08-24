@@ -13,7 +13,7 @@ export class CounterComponent {
     public currentCount = 0;
 
     public incrementCounter() {
-        this.toastr.success(this.currentCount.toString()+"\t!"+ this.eventService.getEvents().length);
+        this.toastr.success(this.currentCount.toString()+"\t!"+ this.eventService.getEvents());
         this.currentCount++;
     }
 }

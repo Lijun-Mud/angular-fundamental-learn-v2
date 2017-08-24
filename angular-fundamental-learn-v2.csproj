@@ -21,12 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\event\create-event.component.ts" />
+    <None Remove="ClientApp\app\components\event\event-list-resolver.service.ts" />
     <None Remove="ClientApp\app\components\event\index.ts" />
     <None Remove="ClientApp\app\routes.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\errors\404.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\event\create-event.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\event\event-list-resolver.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\index.ts" />
     <TypeScriptCompile Include="ClientApp\app\routes.ts" />
   </ItemGroup>

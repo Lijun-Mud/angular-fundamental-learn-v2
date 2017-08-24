@@ -20,6 +20,17 @@
     <Content Remove="ClientApp\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\app\components\event\index.ts" />
+    <None Remove="ClientApp\app\routes.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\errors\404.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\event\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\routes.ts" />
+  </ItemGroup>
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

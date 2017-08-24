@@ -12,6 +12,9 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { EventService } from './components/event/shared/event.service';
+import { Error404Component } from './components/errors/404.component'
+import { appRoutes } from './routes';
+import {EventAppComponent} from './components/event/index';
 
 @NgModule({
     declarations: [
@@ -19,19 +22,15 @@ import { EventService } from './components/event/shared/event.service';
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+        Error404Component,
+        EventAppComponent
     ],
     imports: [
         CommonModule,
         HttpModule,
         FormsModule,
-        RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
-            { path: '**', redirectTo: 'home' }
-        ]),
+        RouterModule.forRoot(appRoutes),
         ToastrModule.forRoot()
     ],
     providers: [
@@ -40,3 +39,4 @@ import { EventService } from './components/event/shared/event.service';
 })
 export class AppModuleShared {
 }
+    

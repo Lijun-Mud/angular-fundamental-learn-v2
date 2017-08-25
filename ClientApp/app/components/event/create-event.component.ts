@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
     templateUrl:'./create-event.component.html'
 })
 
-export class  CreateEventComponent {
+export class CreateEventComponent {
+    isDirty:boolean=true;
     constructor(private rounter: Router) {
         
     }

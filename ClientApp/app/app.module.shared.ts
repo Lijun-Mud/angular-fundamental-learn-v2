@@ -11,7 +11,14 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { EventService } from './components/event/shared/event.service';
 import { Error404Component } from './components/errors/404.component'
 import { appRoutes } from './routes';
-import {EventsListComponent,EventThumbnailComponent,CreateEventComponent,EventsListResolver} from './components/event/index';
+import {
+    EventsListComponent,
+    EventThumbnailComponent,
+    CreateEventComponent,
+    EventsListResolver,
+    EventDetailComponent,
+    EventRouteActivator,
+} from './components/event/index';
 
 @NgModule({
     declarations: [
@@ -21,6 +28,7 @@ import {EventsListComponent,EventThumbnailComponent,CreateEventComponent,EventsL
         EventsListComponent,
         EventThumbnailComponent,
         CreateEventComponent,
+        EventDetailComponent,
     ],
     imports: [
         CommonModule,
@@ -31,9 +39,20 @@ import {EventsListComponent,EventThumbnailComponent,CreateEventComponent,EventsL
     ],
     providers: [
         EventService,
-        EventsListResolver
+        EventsListResolver,
+        EventRouteActivator,
+        {
+            provide: 'canDeactivateCreateEvent',
+            useValue: checkDirtyState
+        }
     ]
 })
 export class AppModuleShared {
+
 }
-    
+
+export function checkDirtyState(component: CreateEventComponent) {
+    if (component.isDirty)
+        return window.confirm('You have not saved this event, do you really want to cancel?');
+    return true;
+}

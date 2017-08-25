@@ -9,10 +9,13 @@ export class EventService {
                 subject.next(Events);
                 subject.complete();
             },
-            2000);
+            100);
         return subject;
     }
-}
+
+    getEvent(id: number) {
+        return Events.find(event => event.id === id);
+    }}
 
 const Events  = [
     {

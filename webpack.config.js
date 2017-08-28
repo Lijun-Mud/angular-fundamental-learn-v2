@@ -17,7 +17,7 @@ module.exports = (env) => {
         },
         module: {
             rules: [
-                { test: /\.ts$/, include: /ClientApp/, use: isDevBuild ? ['awesome-typescript-loader?silent=true', 'angular2-template-loader'] : '@ngtools/webpack' },
+                { test: /\.ts$/, include: /ClientApp/, use: isDevBuild ? ['awesome-typescript-loader?silent=true', 'angular-router-loader', 'angular2-template-loader'] : '@ngtools/webpack' },
                 { test: /\.html$/, use: 'html-loader?minimize=false' },
                 { test: /\.css$/, use: [ 'to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize' ] },
                 { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
@@ -30,7 +30,13 @@ module.exports = (env) => {
     const clientBundleOutputDir = './wwwroot/dist';
     const clientBundleConfig = merge(sharedConfig, {
         entry: { 'main-client': './ClientApp/boot.browser.ts' },
-        output: { path: path.join(__dirname, clientBundleOutputDir) },
+        //output: { path: path.join(__dirname, clientBundleOutputDir) },
+        output: {
+            filename: '[name].js',
+            chunkFilename: '[name]-chunk.js',
+            //publicPath: clientBundleOutputDir +"/",
+            path: path.resolve(__dirname, clientBundleOutputDir)
+        },
         plugins: [
             new webpack.DllReferencePlugin({
                 context: __dirname,

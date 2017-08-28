@@ -23,10 +23,9 @@
   <ItemGroup>
     <None Remove="ClientApp\app\components\event\create-event.component.ts" />
     <None Remove="ClientApp\app\components\event\event-detail\event-detail-route-activator.ts" />
-    <None Remove="ClientApp\app\components\event\event-detail\event-detail.component.ts" />
-    <None Remove="ClientApp\app\components\event\event-detail\index.ts" />
     <None Remove="ClientApp\app\components\event\event-list-resolver.service.ts" />
-    <None Remove="ClientApp\app\components\event\index.ts" />
+    <None Remove="ClientApp\app\components\event\event.module.ts" />
+    <None Remove="ClientApp\app\components\event\event.routes.ts" />
     <None Remove="ClientApp\app\routes.ts" />
   </ItemGroup>
 
@@ -35,9 +34,9 @@
     <TypeScriptCompile Include="ClientApp\app\components\event\create-event.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event-detail\event-detail-route-activator.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event-detail\event-detail.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\event\event-detail\index.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event-list-resolver.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\event\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\event\event.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\event\event.routes.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\profile.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\user.routes.ts" />
     <TypeScriptCompile Include="ClientApp\app\routes.ts" />

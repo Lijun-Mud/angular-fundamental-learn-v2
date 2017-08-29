@@ -1,5 +1,6 @@
 ﻿import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import {FormsModule,ReactiveFormsModule} from "@angular/forms"
 
 import {CreateEventComponent} from "./create-event.component";
 import {EventsListComponent} from "./event-list.component";
@@ -11,7 +12,11 @@ import {EventThumbnailComponent} from "./event-thumbnail";
 import {EventRouteActivator} from "./event-detail/event-detail-route-activator";
 
 @NgModule({
-    imports: [CommonModule, eventRouting],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        eventRouting],
     declarations: [
         EventThumbnailComponent,
         EventsListComponent,

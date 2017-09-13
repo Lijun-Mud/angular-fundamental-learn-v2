@@ -27,6 +27,9 @@
     <None Remove="ClientApp\app\components\event\event.module.ts" />
     <None Remove="ClientApp\app\components\event\event.routes.ts" />
     <None Remove="ClientApp\app\components\event\shared\event.model.ts" />
+    <None Remove="ClientApp\app\components\user\auth.service.ts" />
+    <None Remove="ClientApp\app\components\user\login.component.ts" />
+    <None Remove="ClientApp\app\components\user\user.model.ts" />
     <None Remove="ClientApp\app\routes.ts" />
   </ItemGroup>
 
@@ -39,7 +42,10 @@
     <TypeScriptCompile Include="ClientApp\app\components\event\event.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event.routes.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\shared\event.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\user\auth.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\user\login.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\profile.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\user\user.model.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\user.routes.ts" />
     <TypeScriptCompile Include="ClientApp\app\routes.ts" />
   </ItemGroup>

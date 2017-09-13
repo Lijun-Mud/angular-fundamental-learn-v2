@@ -11,7 +11,8 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { Error404Component } from './components/errors/404.component'
 import { appRoutes } from './routes';
 
-import {EventModule} from "./components/event/event.module";
+import { EventModule } from "./components/event/event.module";
+import {AuthService} from "./components/user/auth.service";
 
 @NgModule({
     declarations: [
@@ -26,6 +27,9 @@ import {EventModule} from "./components/event/event.module";
         RouterModule.forRoot(appRoutes),
         EventModule,
         ToastrModule.forRoot(),
+    ],
+    providers: [
+        AuthService
     ]
 })
 export class AppModuleShared {

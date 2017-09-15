@@ -25,6 +25,8 @@ export class ProfileComponent implements  OnInit {
     }
 
     ngOnInit(): void {
+        this.auth.loginUser("", "");//06-collecting-data-with-angular-forms-and-validation
+
         this.firstName = new FormControl(this.auth.currentUser.firstName, [Validators.required, Validators.pattern("[a-zA-Z].*")]);
         this.lastName = new FormControl(this.auth.currentUser.lastName, Validators.required);
 

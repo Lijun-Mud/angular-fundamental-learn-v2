@@ -23,6 +23,7 @@
   <ItemGroup>
     <None Remove="ClientApp\app\components\event\create-event.component.ts" />
     <None Remove="ClientApp\app\components\event\event-detail\event-detail-route-activator.ts" />
+    <None Remove="ClientApp\app\components\event\event-detail\session-list.component.ts" />
     <None Remove="ClientApp\app\components\event\event-list-resolver.service.ts" />
     <None Remove="ClientApp\app\components\event\event.module.ts" />
     <None Remove="ClientApp\app\components\event\event.routes.ts" />
@@ -38,10 +39,12 @@
     <TypeScriptCompile Include="ClientApp\app\components\event\create-event.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event-detail\event-detail-route-activator.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event-detail\event-detail.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\event\event-detail\session-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event-list-resolver.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event.routes.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\shared\event.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\event\shared\restricted-word.validator.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\auth.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\login.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\profile.component.ts" />

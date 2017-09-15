@@ -14,14 +14,23 @@ export class EventService {
         return subject;
     }
 
-    getEvent(id: number):IEvent|undefined {
-        return Events.find(event => event.id === id);
+    getEvent(id: number):IEvent {
+        let event = Events.find(x => x.id === id);
+        if (!event) {
+            event = <IEvent>{};
+        }
+        return event as IEvent;
     }
 
-    saveEvent(event:any) {
+    saveEvent(event: IEvent) {
         event.id = 999;
         event.sessions = [];
         Events.push(event);
+    }
+
+    updateEvent(event: IEvent) {
+        let index = Events.findIndex(x => x.id === event.id);
+        Events[index] = event;
     }
 }
 

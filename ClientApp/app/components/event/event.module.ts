@@ -9,7 +9,9 @@ import {EventDetailComponent} from "./event-detail/event-detail.component";
 import {eventRouting} from "./event.routes";
 import {EventService} from "./shared/event.service";
 import {EventThumbnailComponent} from "./event-thumbnail";
-import {EventRouteActivator} from "./event-detail/event-detail-route-activator";
+import { EventRouteActivator } from "./event-detail/event-detail-route-activator";
+import { SessionListComponent } from "./event-detail/session-list.component";
+import {CreateSessionComponent} from "./event-detail/create-session.component";
 
 @NgModule({
     imports: [
@@ -21,7 +23,10 @@ import {EventRouteActivator} from "./event-detail/event-detail-route-activator";
         EventThumbnailComponent,
         EventsListComponent,
         CreateEventComponent,
-        EventDetailComponent],
+        EventDetailComponent,
+        SessionListComponent,
+        CreateSessionComponent,
+    ],
     providers: [
         EventService,
         EventsListResolver,

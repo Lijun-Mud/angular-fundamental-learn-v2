@@ -11,7 +11,8 @@ import {EventService} from "./shared/event.service";
 import {EventThumbnailComponent} from "./event-thumbnail";
 import { EventRouteActivator } from "./event-detail/event-detail-route-activator";
 import { SessionListComponent } from "./event-detail/session-list.component";
-import {CreateSessionComponent} from "./event-detail/create-session.component";
+import { CreateSessionComponent } from "./event-detail/create-session.component";
+import {CollapsibleWellComponent} from "./shared/collapsible-well.component";
 
 @NgModule({
     imports: [
@@ -26,6 +27,7 @@ import {CreateSessionComponent} from "./event-detail/create-session.component";
         EventDetailComponent,
         SessionListComponent,
         CreateSessionComponent,
+        CollapsibleWellComponent,
     ],
     providers: [
         EventService,

@@ -27,6 +27,7 @@
     <None Remove="ClientApp\app\components\event\event-list-resolver.service.ts" />
     <None Remove="ClientApp\app\components\event\event.module.ts" />
     <None Remove="ClientApp\app\components\event\event.routes.ts" />
+    <None Remove="ClientApp\app\components\event\shared\collapsible-well.component.ts" />
     <None Remove="ClientApp\app\components\event\shared\event.model.ts" />
     <None Remove="ClientApp\app\components\user\auth.service.ts" />
     <None Remove="ClientApp\app\components\user\login.component.ts" />
@@ -43,6 +44,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\event\event-list-resolver.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event.routes.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\event\shared\collapsible-well.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\shared\event.model.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\shared\restricted-word.validator.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\auth.service.ts" />

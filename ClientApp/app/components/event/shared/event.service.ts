@@ -1,17 +1,34 @@
-﻿import { Injectable } from '@angular/core'
-import { Subject,Observable } from 'rxjs/RX';
+﻿import { Injectable ,Inject} from '@angular/core'
+import { Observable } from 'rxjs/RX';
+import {Http,Response,Headers,RequestOptions} from "@angular/http";
 import {IEvent} from "./event.model";
+
 
 @Injectable()
 export class EventService {
-    getEvents():Observable<IEvent[]> {
-        let subject = new Subject<IEvent[]>();
-        setTimeout(() => {
-                subject.next(Events);
-                subject.complete();
-            },
-            100);
-        return subject;
+
+    constructor(private http: Http, @Inject('BASE_URL') private baseUrl:string) {
+        
+    }
+    getEvents(): Observable<IEvent[]> {
+        //let subject = new Subject<IEvent[]>();
+        //setTimeout(() => {
+        //        subject.next(Events);
+        //        subject.complete();
+        //    },
+        //    100);
+        //return subject;
+        let header = new Headers({ 'Content-Type': 'application/json' });
+        let option = new RequestOptions({ headers: header });
+        //var selectedEvent = this.http.get(`${this.baseUrl}/api/events/1` , option).map((response: Response) => <IEvent>response.json())
+        //    .catch(this.handleError);
+        this.http.get(`${this.baseUrl}/api/events/1`, option).map((response: Response) => <IEvent>response.json())
+            .subscribe((result: IEvent) => {
+                let selectedEvent = result;
+                console.log(selectedEvent);
+            }, error => this.handleError(error));
+        
+        return this.http.get(`${this.baseUrl}/api/events` ).map((response: Response) => <IEvent[]>response.json()).catch(this.handleError);
     }
 
     getEvent(id: number):IEvent {
@@ -32,6 +49,12 @@ export class EventService {
         let index = Events.findIndex(x => x.id === event.id);
         Events[index] = event;
     }
+
+    //handleError (err: Response) {
+    //    return Observable.throw(err.statusText);
+    //}
+
+    handleError = (err: Response) => Observable.throw(err.statusText);
 }
 
 const Events:IEvent[]  = [

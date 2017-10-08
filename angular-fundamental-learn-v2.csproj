@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
-    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\counter\counter.component.integrated.spec.ts" />
     <None Remove="ClientApp\app\components\event\create-event.component.ts" />
     <None Remove="ClientApp\app\components\event\event-detail\event-detail-route-activator.ts" />
     <None Remove="ClientApp\app\components\event\event-detail\session-list.component.ts" />
@@ -30,13 +31,17 @@
     <None Remove="ClientApp\app\components\event\shared\collapsible-well.component.ts" />
     <None Remove="ClientApp\app\components\event\shared\duration.pipe.ts" />
     <None Remove="ClientApp\app\components\event\shared\event.model.ts" />
+    <None Remove="ClientApp\app\components\event\shared\event.service.spec.ts" />
     <None Remove="ClientApp\app\components\user\auth.service.ts" />
     <None Remove="ClientApp\app\components\user\login.component.ts" />
     <None Remove="ClientApp\app\components\user\user.model.ts" />
     <None Remove="ClientApp\app\routes.ts" />
+    <None Remove="ClientApp\app\test.spec.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\counter\counter.component.integrated.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\counter\counter.component.isolated.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\errors\404.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\create-event.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\event-detail\event-detail-route-activator.ts" />
@@ -48,6 +53,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\event\shared\collapsible-well.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\shared\duration.pipe.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\shared\event.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\event\shared\event.service.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\event\shared\restricted-word.validator.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\auth.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\login.component.ts" />
@@ -55,6 +61,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\user\user.model.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\user.routes.ts" />
     <TypeScriptCompile Include="ClientApp\app\routes.ts" />
+    <TypeScriptCompile Include="ClientApp\app\test.spec.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

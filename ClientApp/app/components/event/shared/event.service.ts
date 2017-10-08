@@ -22,11 +22,11 @@ export class EventService {
         let option = new RequestOptions({ headers: header });
         //var selectedEvent = this.http.get(`${this.baseUrl}/api/events/1` , option).map((response: Response) => <IEvent>response.json())
         //    .catch(this.handleError);
-        this.http.get(`${this.baseUrl}/api/events/1`, option).map((response: Response) => <IEvent>response.json())
-            .subscribe((result: IEvent) => {
-                let selectedEvent = result;
-                console.log(selectedEvent);
-            }, error => this.handleError(error));
+        //this.http.get(`${this.baseUrl}/api/events/1`, option).map((response: Response) => <IEvent>response.json())
+        //    .subscribe((result: IEvent) => {
+        //        let selectedEvent = result;
+        //        console.log(selectedEvent);
+        //    }, error => this.handleError(error));
         
         return this.http.get(`${this.baseUrl}/api/events` ).map((response: Response) => <IEvent[]>response.json()).catch(this.handleError);
     }

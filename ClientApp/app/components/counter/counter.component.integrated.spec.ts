@@ -27,6 +27,7 @@ describe("CounterComponent",() => {
         });
 
         fixture = TestBed.createComponent(CounterComponent);
+        fixture.detectChanges();
     });
 
     describe("initial display",() => {
@@ -34,5 +35,18 @@ describe("CounterComponent",() => {
             const title = fixture.nativeElement.querySelector("h1").textContent;
             expect(title).toBe("Counter");
         }));
+    });
+
+    describe("click event",() => {
+        it("should increase 1 when clicked",
+            async(() => {
+                const countElement = fixture.nativeElement.querySelector('strong');
+                expect(countElement.textContent).toEqual('0');
+
+                const button = fixture.nativeElement.querySelector("button");
+                button.click();
+                fixture.detectChanges();
+                expect(countElement.textContent).toEqual("1");
+            }));
     });
 });
